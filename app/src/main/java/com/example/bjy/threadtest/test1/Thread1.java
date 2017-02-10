@@ -1,11 +1,10 @@
-package com.example.bjy.threadtest.thead;
+package com.example.bjy.threadtest.test1;
 
 import android.util.Log;
 
 import java.util.Random;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**

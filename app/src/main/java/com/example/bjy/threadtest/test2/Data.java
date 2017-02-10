@@ -1,4 +1,4 @@
-package com.example.bjy.threadtest.thead;
+package com.example.bjy.threadtest.test2;
 
 /**
  * Created by bjy on 2017/2/9.

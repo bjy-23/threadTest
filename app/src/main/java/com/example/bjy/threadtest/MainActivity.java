@@ -6,8 +6,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.bjy.threadtest.thead.Data;
-import com.example.bjy.threadtest.thead.Thread1;
+import com.example.bjy.threadtest.test2.Data;
+import com.example.bjy.threadtest.test1.Thread1;
+import com.example.bjy.threadtest.test2.Data2;
 
 import java.util.Random;
 
@@ -25,27 +26,29 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                test1();
-//                test2();
+                test2();
             }
         });
     }
     public void test2(){
-        final Data data = new Data();
+        final Data2 data = new Data2();
 
+        //写操作
+//        for (int i = 0; i < 3; i++) {
+//            new Thread(new Runnable() {
+//                public void run() {
+//                    for (int j = 0; j < 1; j++) {
+//                        data.set(new Random().nextInt(30));
+//                    }
+//                }
+//            },"Thread"+i).start();
+//        }
+
+        //读操作
         for (int i = 0; i < 3; i++) {
             new Thread(new Runnable() {
                 public void run() {
-                    for (int j = 0; j < 1; j++) {
-                        data.set(new Random().nextInt(30));
-                    }
-                }
-            },"Thread"+i).start();
-        }
-
-        for (int i = 0; i < 3; i++) {
-            new Thread(new Runnable() {
-                public void run() {
-                    for (int j = 0; j < 1; j++) {
+                    for (int j = 0; j < 10; j++) {
                         data.get();
                     }
                 }
